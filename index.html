@@ -300,9 +300,11 @@
   // Imagens: arquivos da pasta img/ (fotos oficiais dos anúncios, 900 px).
   const IMG = f => "img/" + f;
 
-  // Produtos da vitrine (o primeiro é o do vídeo mais recente).
+  // Produtos da vitrine. "n" é o número fixo (o vídeo do TikTok fala "produto nº n").
+  // "post" é quando o vídeo do produto vai ao ar: o site sempre abre pelo vídeo mais recente que já saiu.
   const PRODUTOS = /*PRODUTOS*/[
   {
+    "n": 1,
     "nome": "Kit 20 potes herméticos",
     "why": "Despensa organizada: 480 ml, 1,1 L e 2,3 L com tampa de vedação.",
     "preco": "R$ 233,76",
@@ -311,9 +313,11 @@
     "cat": "Cozinha",
     "img": "potes.jpg",
     "nota": "4,9",
-    "link": "https://s.shopee.com.br/4qGj7j72ZA"
+    "link": "https://s.shopee.com.br/4qGj7j72ZA",
+    "post": "2026-10-27T09:00:00-03:00"
   },
   {
+    "n": 2,
     "nome": "Omeleteira elétrica Agratto inox",
     "why": "Duas omeletes de uma vez, em minutos, sem sujar o fogão.",
     "preco": "R$ 115,90",
@@ -322,9 +326,11 @@
     "cat": "Cozinha",
     "img": "omeleteira.jpg",
     "nota": "4,9",
-    "link": "https://s.shopee.com.br/3VlLX9Jol4"
+    "link": "https://s.shopee.com.br/3VlLX9Jol4",
+    "post": "2026-10-27T14:00:00-03:00"
   },
   {
+    "n": 3,
     "nome": "Kit anti-acne Principia (gel + sérum + protetor)",
     "why": "Rotina completa pra pele oleosa em 3 passos.",
     "preco": "R$ 146,98",
@@ -333,9 +339,11 @@
     "cat": "Beleza",
     "img": "kit-acne.jpg",
     "nota": "4,9",
-    "link": "https://s.shopee.com.br/5VWPur2fBr"
+    "link": "https://s.shopee.com.br/5VWPur2fBr",
+    "post": "2026-10-27T20:00:00-03:00"
   },
   {
+    "n": 4,
     "nome": "Lavadora de alta pressão Vonder 1400 W",
     "why": "Calçada, carro e quintal limpos gastando menos água.",
     "preco": "R$ 389,99",
@@ -344,9 +352,11 @@
     "cat": "Casa",
     "img": "lavadora.jpg",
     "nota": "4,9",
-    "link": "https://s.shopee.com.br/gRAAATLYV"
+    "link": "https://s.shopee.com.br/gRAAATLYV",
+    "post": "2026-10-28T09:00:00-03:00"
   },
   {
+    "n": 5,
     "nome": "Air fryer 6,5 L forno 3 em 1",
     "why": "Fritadeira, forno e assadeira num aparelho só.",
     "preco": "R$ 419,99",
@@ -357,6 +367,7 @@
     "link": "https://s.shopee.com.br/8VA1UY4T30"
   },
   {
+    "n": 6,
     "nome": "Kit cama completa casal Queen",
     "why": "Cobre-leito + jogo de lençol: quarto de hotel em casa.",
     "preco": "R$ 249,90",
@@ -365,9 +376,11 @@
     "cat": "Casa",
     "img": "cama.jpg",
     "nota": "4,9",
-    "link": "https://s.shopee.com.br/40hc8AB5c7"
+    "link": "https://s.shopee.com.br/40hc8AB5c7",
+    "post": "2026-10-28T14:00:00-03:00"
   },
   {
+    "n": 7,
     "nome": "Jogo de panelas antiaderente 11 peças",
     "why": "Inclui panela de pressão 4,3 L. Nada gruda.",
     "preco": "R$ 419,90",
@@ -376,9 +389,11 @@
     "cat": "Cozinha",
     "img": "panelas.jpg",
     "nota": "4,9",
-    "link": "https://s.shopee.com.br/1qd7YAO4YA"
+    "link": "https://s.shopee.com.br/1qd7YAO4YA",
+    "post": "2026-10-28T20:00:00-03:00"
   },
   {
+    "n": 8,
     "nome": "Máquina de cortar cabelo Kemei sem fio",
     "why": "Corte e acabamento em casa, nível barbearia.",
     "preco": "R$ 288,99",
@@ -389,6 +404,7 @@
     "link": "https://s.shopee.com.br/5VWPuxvMuQ"
   },
   {
+    "n": 9,
     "nome": "Kit 2 calças jeans masculinas com lycra",
     "why": "Slim, estica e não aperta. Sai por menos de R$ 60 cada.",
     "preco": "R$ 115,50",
@@ -397,7 +413,8 @@
     "cat": "Moda",
     "img": "jeans.jpg",
     "nota": "4,8",
-    "link": "https://s.shopee.com.br/7VHUIej1Fp"
+    "link": "https://s.shopee.com.br/7VHUIej1Fp",
+    "post": "2026-10-29T09:00:00-03:00"
   }
 ]/*FIM*/;
 
@@ -405,6 +422,9 @@
   const feed = document.getElementById("feed");
   const end = document.getElementById("end");
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const agora = Date.now();
+  const saiu = p => p.post && Date.parse(p.post) <= agora;
+  PRODUTOS.sort((x, y) => (saiu(y) - saiu(x)) || (saiu(x) ? Date.parse(y.post) - Date.parse(x.post) : x.n - y.n));
   const total = PRODUTOS.length;
 
   PRODUTOS.forEach((p, i) => {
@@ -422,7 +442,7 @@
           ${p.badge ? `<span class="badge">${esc(p.badge)}</span>` : ""}
         </div>
         <div class="info">
-          <span class="tag anim d1">${String(i + 1).padStart(2, "0")} · ${esc(p.cat)}</span>
+          <span class="tag anim d1">Nº ${String(p.n).padStart(2, "0")} · ${esc(p.cat)}${i === 0 && saiu(p) && agora - Date.parse(p.post) < 864e5 ? " · Novo hoje" : ""}</span>
           <h2 class="anim d1">${esc(p.nome)}</h2>
           <p class="why anim d2">${esc(p.why)}</p>
           <div class="row anim d3"><span class="price">${esc(p.preco)}</span><span class="sold">${p.nota ? `⭐ ${esc(p.nota)} · ` : ""}${esc(p.vendas)}</span></div>
