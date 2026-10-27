@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vício em Utilidade · Achados úteis para casa e para você</title>
+<meta name="description" content="Coisas úteis que você não sabia que precisava. Achados selecionados de casa, cozinha, beleza e moda com link direto para a Shopee.">
+<meta property="og:title" content="Vício em Utilidade">
+<meta property="og:description" content="Coisas úteis que você não sabia que precisava. Deslize e vá direto pra Shopee.">
+<meta property="og:image" content="banner-vitrine.png">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#141019">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #ff5e3a;
+    --amber: #ffaa28;
+    --ink: #141019;
+    --white: #ffffff;
+    --soft: rgba(255,255,255,.72);
+    --glass: rgba(20,16,25,.55);
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0; background: var(--ink); color: var(--white);
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  a { color: inherit; }
+
+  /* Rolagem que encaixa uma tela por vez */
+  .feed {
+    height: 100svh; overflow-y: auto; scroll-snap-type: y mandatory;
+    scroll-behavior: smooth; overscroll-behavior-y: contain;
+    scrollbar-width: none;
+  }
+  .feed::-webkit-scrollbar { display: none; }
+  .slide {
+    position: relative; height: 100svh; scroll-snap-align: start; scroll-snap-stop: always;
+    overflow: hidden; display: flex; align-items: center; justify-content: center;
+  }
+
+  /* Barra fixa no topo */
+  .topbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 20;
+    display: flex; align-items: center; gap: 10px;
+    padding: calc(10px + env(safe-area-inset-top)) 16px 10px;
+    background: var(--ink); border-bottom: 1px solid rgba(255,255,255,.08);
+    pointer-events: none;
+  }
+  .topbar img { width: 34px; height: 34px; border-radius: 50%; border: 2px solid rgba(255,255,255,.8); }
+  .topbar strong { font-size: 15px; font-weight: 900; letter-spacing: -.2px; }
+  .topbar .count { margin-left: auto; font-size: 13px; font-weight: 700; color: var(--soft); font-variant-numeric: tabular-nums; }
+
+  /* Pontinhos de navegação */
+  .dots {
+    position: fixed; right: 10px; top: 50%; transform: translateY(-50%); z-index: 20;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .dots button {
+    width: 8px; height: 8px; padding: 0; border: 0; border-radius: 99px; cursor: pointer;
+    background: rgba(255,255,255,.35); transition: height .3s, background .3s;
+  }
+  .dots button[aria-current="true"] { height: 22px; background: var(--orange); }
+
+  /* Capa */
+  .intro { background: radial-gradient(120% 80% at 50% 0%, var(--orange) 0%, #c2381c 45%, var(--ink) 100%); text-align: center; padding: 0 24px; }
+  .intro .logo {
+    width: 120px; height: 120px; border-radius: 50%;
+    border: 4px solid rgba(255,255,255,.9); box-shadow: 0 20px 60px rgba(0,0,0,.35);
+  }
+  .intro h1 { font-size: clamp(34px, 9vw, 64px); line-height: 1; margin: 18px 0 10px; font-weight: 900; letter-spacing: -1.5px; }
+  .intro p { margin: 0 auto; max-width: 440px; font-size: 17px; font-weight: 500; color: rgba(255,255,255,.9); }
+  .intro .social { margin-top: 18px; display: flex; gap: 10px; justify-content: center; }
+  .intro .social a {
+    text-decoration: none; font-weight: 700; font-size: 14px;
+    background: rgba(255,255,255,.95); color: var(--orange); padding: 9px 16px; border-radius: 999px;
+  }
+  .hint {
+    position: absolute; bottom: calc(26px + env(safe-area-inset-bottom)); left: 0; right: 0;
+    text-align: center; font-size: 13px; font-weight: 700; color: rgba(255,255,255,.85);
+    animation: bob 1.6s ease-in-out infinite;
+  }
+  .hint span { display: block; font-size: 22px; line-height: 1; }
+  @keyframes bob { 50% { transform: translateY(8px); } }
+
+
+  /* Capa: banner com arte + slogan no topo, categorias e botão */
+  .hero { display: block; padding: 0; background: var(--ink); }
+  .hero .wrap { height: 100%; max-width: 1080px; margin: 0 auto; display: flex; flex-direction: column; justify-content: center;
+    padding: calc(68px + env(safe-area-inset-top)) 16px calc(16px + env(safe-area-inset-bottom)); gap: 14px; }
+  .banner { display: block; width: 100%; border-radius: 22px; overflow: hidden; flex-shrink: 0; box-shadow: 0 18px 50px rgba(255,94,58,.22); }
+  .banner img { display: block; width: 100%; height: auto; }
+  @media (max-width: 899px) and (max-height: 760px) { .hero p.lead { display: none; } }
+  .hero p.lead { margin: 0; font-size: 14.5px; line-height: 1.45; font-weight: 600; color: var(--soft); }
+  .cats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .cats button { border: 0; padding: 0; cursor: pointer; background: #241d2e; border-radius: 14px; overflow: hidden; color: #fff; font: 800 12.5px Inter, sans-serif; text-align: center; }
+  .cats button img { width: 100%; aspect-ratio: 1; object-fit: contain; display: block; background: #fff; padding: 4px; }
+  .cats button span { display: block; padding: 6px 2px; }
+  .hero .bottom { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .hero .cta { border: 0; cursor: pointer; font: 900 15.5px Inter, sans-serif; color: #fff; background: linear-gradient(120deg, var(--orange), var(--amber));
+    padding: 14px 22px; border-radius: 14px; box-shadow: 0 10px 26px rgba(255,94,58,.4); }
+  .hero .mini { font-size: 12.5px; font-weight: 700; color: var(--soft); }
+  @media (min-width: 900px) {
+    .hero .wrap { max-width: 1240px; display: grid; grid-template-columns: 1fr 1.1fr; grid-template-rows: auto auto auto; align-content: center;
+      column-gap: 32px; row-gap: 16px; padding: 84px 40px 32px; }
+    .banner { grid-column: 1 / -1; }
+    .hero p.lead { font-size: 17px; grid-column: 1; grid-row: 2; align-self: end; }
+    .hero .bottom { grid-column: 1; grid-row: 3; align-self: start; }
+    .cats { grid-column: 2; grid-row: 2 / span 2; align-self: center; }
+  }
+  /* telas baixas (notebook pequeno, celular deitado): o banner encolhe para tudo caber */
+  @media (min-width: 900px) and (max-height: 760px) { .hero .wrap { max-width: min(1240px, 150vh); padding-top: 74px; } .cats button span { padding: 4px 2px; } }
+  @media (min-width: 1600px) { .hero .wrap { max-width: 1480px; } }
+  /* celular deitado: banner à esquerda, categorias e botão à direita */
+  @media (orientation: landscape) and (max-height: 520px) {
+    .hero .wrap { display: grid; grid-template-columns: 1.35fr 1fr; grid-template-rows: auto auto; align-content: center; gap: 10px 16px; padding: 62px 20px 12px; max-width: min(1100px, 230vh); }
+    .banner { grid-column: 1; grid-row: 1 / span 2; align-self: center; border-radius: 16px; }
+    .cats { grid-column: 2; grid-row: 1; align-self: end; }
+    .hero .bottom { grid-column: 2; grid-row: 2; align-self: start; }
+    .hero p.lead { display: none; }
+    .cats { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+    .cats button img { max-height: 70px; }
+    .cats button span { padding: 3px 2px; }
+    .hero .bottom { gap: 6px; } .hero .cta { padding: 10px 16px; font-size: 14px; } .hero .mini { display: none; }
+  }
+  .topnav { margin-left: auto; display: flex; gap: 6px; pointer-events: auto; }
+  .topnav a { text-decoration: none; font-size: 13px; font-weight: 800; padding: 7px 12px; border-radius: 999px; background: rgba(255,255,255,.14); }
+  .topnav { align-items: center; }
+  .topnav .segue { font-size: 13px; font-weight: 800; color: var(--amber); margin-right: 2px; }
+  .topnav a.rede { width: 34px; height: 34px; padding: 0; display: grid; place-items: center; color: #fff; }
+  .topnav a.rede svg { width: 19px; height: 19px; }
+  .topnav a.ig { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+  .topnav a.tt { background: #000; box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.18); }
+  .topnav a.tt svg { filter: drop-shadow(-1.2px -1px 0 #25f4ee) drop-shadow(1.2px 1px 0 #fe2c55); }
+  .topbar strong { white-space: nowrap; }
+  @media (max-width: 400px) { .topbar strong { font-size: 14px; } .topnav { gap: 5px; } }
+  @media (max-width: 350px) { .topnav .segue { display: none; } }
+
+  /* Produto */
+  .bg {
+    position: absolute; inset: -40px; background-size: cover; background-position: center;
+    filter: blur(38px) saturate(1.3) brightness(.55); transform: scale(1.1);
+  }
+  .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,16,25,.15) 0%, rgba(20,16,25,.35) 45%, rgba(20,16,25,.92) 78%, var(--ink) 100%); }
+  .prod {
+    position: relative; z-index: 1; width: 100%; max-width: 1040px; height: 100%;
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+    padding: calc(64px + env(safe-area-inset-top)) 20px calc(24px + env(safe-area-inset-bottom));
+    gap: 16px;
+  }
+  .photo {
+    position: relative; width: min(100%, 52svh, 520px); aspect-ratio: 1 / 1; flex-shrink: 1; min-height: 0;
+    border-radius: 28px; overflow: hidden; background: rgba(255,255,255,.06);
+    box-shadow: 0 30px 80px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.08);
+  }
+  .photo img { width: 100%; height: 100%; object-fit: cover; display: block; color: transparent; transform: scale(1.08); transition: transform 6s ease-out; }
+  .slide.in .photo img { transform: scale(1); }
+  .badge {
+    position: absolute; left: 14px; top: 14px; background: var(--orange); color: #fff;
+    font-size: 12px; font-weight: 900; padding: 6px 11px; border-radius: 999px; letter-spacing: .2px;
+  }
+  .info { width: 100%; max-width: 520px; display: flex; flex-direction: column; gap: 8px; }
+  .tag { font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; color: var(--amber); }
+  .info h2 { margin: 0; font-size: clamp(24px, 6.4vw, 40px); line-height: 1.08; font-weight: 900; letter-spacing: -.8px; }
+  .why { margin: 0; font-size: 16px; line-height: 1.4; color: var(--soft); }
+  .row { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .price { font-size: 28px; font-weight: 900; }
+  .sold { font-size: 13px; font-weight: 700; color: var(--soft); }
+  .btn {
+    margin-top: 6px; display: flex; align-items: center; justify-content: center; gap: 8px;
+    text-decoration: none; background: linear-gradient(120deg, var(--orange), var(--amber)); color: #fff;
+    font-weight: 900; font-size: 17px; padding: 16px; border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(255,94,58,.4);
+  }
+  .btn:active { transform: scale(.98); }
+  .safe { display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 12.5px; font-weight: 700; color: var(--soft); }
+  .trust { margin: 18px auto 0; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; max-width: 460px; }
+  .trust span {
+    display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700;
+    background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.22); padding: 8px 12px; border-radius: 12px;
+  }
+
+  /* Entrada animada */
+  .anim { opacity: 0; transform: translateY(26px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1); }
+  .slide.in .anim { opacity: 1; transform: none; }
+  .slide.in .anim.d1 { transition-delay: .08s; }
+  .slide.in .anim.d2 { transition-delay: .16s; }
+  .slide.in .anim.d3 { transition-delay: .24s; }
+  .slide.in .anim.d4 { transition-delay: .32s; }
+
+  /* Computador: foto à esquerda, texto à direita */
+  @media (min-width: 900px) {
+    .prod { flex-direction: row; justify-content: center; align-items: center; gap: 56px; padding: 80px 64px; }
+    .photo { width: min(46vw, 70vh, 560px); }
+    .info { max-width: 420px; }
+    .shade { background: linear-gradient(90deg, rgba(20,16,25,.2), rgba(20,16,25,.85)); }
+  }
+
+  /* Final */
+  .end { background: var(--ink); text-align: center; padding: 0 24px; }
+  .end .box { max-width: 560px; }
+  .end h2 { font-size: 30px; font-weight: 900; margin: 0 0 8px; letter-spacing: -.6px; }
+  .end p { color: var(--soft); font-size: 14px; line-height: 1.5; }
+  .end .redes { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin: 4px 0 6px; }
+  .end .redes a { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #fff; font-weight: 800; font-size: 14px; padding: 10px 18px; border-radius: 999px; }
+  .end .redes a svg { width: 18px; height: 18px; }
+  .end .redes a.ig { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+  .end .redes a.tt { background: #000; box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.2); }
+  .end .again { display: inline-block; margin-top: 8px; background: rgba(255,255,255,.1); border: 0; color: #fff; font: 700 14px Inter, sans-serif; padding: 11px 18px; border-radius: 999px; cursor: pointer; }
+  .end details { text-align: left; margin-top: 14px; font-size: 13px; color: var(--soft); }
+  .end summary { cursor: pointer; font-weight: 700; color: #fff; text-align: center; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .feed { scroll-behavior: auto; }
+    .anim, .photo img, .hint { transition: none !important; animation: none !important; opacity: 1; transform: none; }
+  }
+
+  .cookie {
+    position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); z-index: 50;
+    max-width: 560px; margin: 0 auto; background: #fff; color: var(--ink); border-radius: 16px; padding: 14px 16px;
+    font-size: 13px; line-height: 1.4; display: none; box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  }
+  .cookie .row { display: flex; gap: 8px; margin-top: 10px; }
+  .cookie button { flex: 1; border: 0; border-radius: 10px; padding: 10px; cursor: pointer; font: 700 14px Inter, sans-serif; }
+  .cookie .ok { background: var(--orange); color: #fff; }
+  .cookie .no { background: #eee; color: var(--ink); }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <img src="favicon.png" alt="">
+  <strong>Vício em Utilidade</strong>
+  <nav class="topnav">
+    <span class="segue">Segue</span>
+    <a class="rede ig" href="https://www.instagram.com/vicioemutilidade/" target="_blank" rel="noopener" aria-label="Seguir no Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.3" fill="currentColor"/></svg></a>
+    <a class="rede tt" href="https://www.tiktok.com/@vicioemutilidade" target="_blank" rel="noopener" aria-label="Seguir no TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.6 2h-3.4v13.4a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9.1a6.3 6.3 0 1 0 5.4 6.3V8.6a8 8 0 0 0 4.4 1.3V6.5a4.5 4.5 0 0 1-4.4-4.5z"/></svg></a>
+    <a href="#" id="toEnd" aria-label="Sobre">ⓘ</a>
+  </nav>
+  <span class="count" id="count"></span>
+</header>
+<nav class="dots" id="dots" aria-label="Produtos"></nav>
+
+<main class="feed" id="feed">
+  <section class="slide hero" data-label="Início">
+    <div class="wrap">
+      <picture class="banner anim">
+        <source media="(min-width: 700px), (orientation: landscape)" srcset="img/banner-largo-pc.jpg">
+        <img src="img/banner-largo-celular.jpg" width="1200" height="896" alt="Eu garimpo, você aproveita. Vício em Utilidade: potes herméticos, air fryer, omeleteira e kit de skincare">
+      </picture>
+      <p class="lead anim d1">Em vez de você perder horas procurando, eu já garimpei por você. Só entra o que é útil, bem avaliado e vende muito na Shopee.</p>
+      <div class="cats anim d2" id="cats"></div>
+      <div class="bottom anim d3">
+        <button class="cta" id="start">Ver os achados ↓</button>
+        <span class="mini">🔒 Compra pela Shopee · 🛡️ Garantia Shopee</span>
+      </div>
+    </div>
+  </section>
+  <!-- produtos entram aqui -->
+  <section class="slide end" id="end" data-label="Fim">
+    <div class="box">
+      <h2 class="anim">Viu algo que gostou?</h2>
+      <p class="anim"><strong>Vício em Utilidade:</strong> eu garimpo, você aproveita.</p>
+      <p class="anim d1">Todo dia tem achado novo no Instagram e no TikTok <strong>@vicioemutilidade</strong>.</p>
+      <div class="redes anim d1">
+        <a class="ig" href="https://www.instagram.com/vicioemutilidade/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.3" fill="currentColor"/></svg> Segue no Instagram</a>
+        <a class="tt" href="https://www.tiktok.com/@vicioemutilidade" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.6 2h-3.4v13.4a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9.1a6.3 6.3 0 1 0 5.4 6.3V8.6a8 8 0 0 0 4.4 1.3V6.5a4.5 4.5 0 0 1-4.4-4.5z"/></svg> Segue no TikTok</a>
+      </div>
+      <button class="again anim d2" id="again">Voltar ao primeiro</button>
+      <p class="anim d3">Preços e estoque são da Shopee e podem mudar a qualquer momento. Confira sempre o valor final na página do produto.</p>
+      <p class="anim d3">🔒 Você não compra aqui: cada botão leva para o anúncio na Shopee. O pagamento, a entrega e a Garantia Shopee (seu dinheiro só é liberado ao vendedor depois que você confirma o recebimento) são todos da Shopee.</p>
+      <p class="anim d3">Participamos do Programa de Afiliados da Shopee. Quando você compra por um dos nossos links, podemos receber uma comissão, sem nenhum custo extra para você. A compra, o pagamento e a entrega são feitos pela Shopee.</p>
+      <details class="anim d4">
+        <summary>Privacidade e cookies</summary>
+        <p>Este site não coleta nome, e-mail ou dados de pagamento. Com o seu consentimento, usamos o Pixel da Meta (Facebook/Instagram) para medir visitas e cliques e para mostrar anúncios mais relevantes. Você pode recusar no aviso de cookies, e nada é carregado. Para mudar sua escolha, limpe os dados deste site no seu navegador.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<div class="cookie" id="cookie" role="dialog" aria-label="Aviso de cookies">
+  Usamos cookies (Pixel da Meta) para medir visitas e melhorar nossos anúncios. Você aceita?
+  <div class="row">
+    <button class="no" id="cookieNo">Recusar</button>
+    <button class="ok" id="cookieOk">Aceitar</button>
+  </div>
+</div>
+
+<script>
+  // ===== Configuração =====
+  // Cole aqui o ID do seu Pixel da Meta (só números). Deixe vazio para desativar.
+  const META_PIXEL_ID = "585948530541421";
+
+  // Imagens: arquivos da pasta img/ (fotos oficiais dos anúncios, 900 px).
+  const IMG = f => "img/" + f;
+
+  // Produtos da vitrine (o primeiro é o do vídeo mais recente).
+  const PRODUTOS = /*PRODUTOS*/[
+  {
+    "nome": "Kit 20 potes herméticos",
+    "why": "Despensa organizada: 480 ml, 1,1 L e 2,3 L com tampa de vedação.",
+    "preco": "R$ 233,76",
+    "vendas": "+10 mil vendidos",
+    "badge": "Mais vendido",
+    "cat": "Cozinha",
+    "img": "potes.jpg",
+    "nota": "4,9",
+    "link": "https://s.shopee.com.br/4qGj7j72ZA"
+  },
+  {
+    "nome": "Omeleteira elétrica Agratto inox",
+    "why": "Duas omeletes de uma vez, em minutos, sem sujar o fogão.",
+    "preco": "R$ 115,90",
+    "vendas": "+1 mil vendidos",
+    "badge": "",
+    "cat": "Cozinha",
+    "img": "omeleteira.jpg",
+    "nota": "4,9",
+    "link": "https://s.shopee.com.br/3VlLX9Jol4"
+  },
+  {
+    "nome": "Kit anti-acne Principia (gel + sérum + protetor)",
+    "why": "Rotina completa pra pele oleosa em 3 passos.",
+    "preco": "R$ 146,98",
+    "vendas": "+30 mil vendidos",
+    "badge": "Mais vendido",
+    "cat": "Beleza",
+    "img": "kit-acne.jpg",
+    "nota": "4,9",
+    "link": "https://s.shopee.com.br/5VWPur2fBr"
+  },
+  {
+    "nome": "Lavadora de alta pressão Vonder 1400 W",
+    "why": "Calçada, carro e quintal limpos gastando menos água.",
+    "preco": "R$ 389,99",
+    "vendas": "+7 mil vendidos",
+    "badge": "",
+    "cat": "Casa",
+    "img": "lavadora.jpg",
+    "nota": "4,9",
+    "link": "https://s.shopee.com.br/gRAAATLYV"
+  },
+  {
+    "nome": "Air fryer 6,5 L forno 3 em 1",
+    "why": "Fritadeira, forno e assadeira num aparelho só.",
+    "preco": "R$ 419,99",
+    "vendas": "+200 vendidos",
+    "badge": "",
+    "cat": "Cozinha",
+    "img": "airfryer.jpg",
+    "link": "https://s.shopee.com.br/8VA1UY4T30"
+  },
+  {
+    "nome": "Kit cama completa casal Queen",
+    "why": "Cobre-leito + jogo de lençol: quarto de hotel em casa.",
+    "preco": "R$ 249,90",
+    "vendas": "+390 vendidos",
+    "badge": "",
+    "cat": "Casa",
+    "img": "cama.jpg",
+    "nota": "4,9",
+    "link": "https://s.shopee.com.br/40hc8AB5c7"
+  },
+  {
+    "nome": "Jogo de panelas antiaderente 11 peças",
+    "why": "Inclui panela de pressão 4,3 L. Nada gruda.",
+    "preco": "R$ 419,90",
+    "vendas": "+340 vendidos",
+    "badge": "",
+    "cat": "Cozinha",
+    "img": "panelas.jpg",
+    "nota": "4,9",
+    "link": "https://s.shopee.com.br/1qd7YAO4YA"
+  },
+  {
+    "nome": "Máquina de cortar cabelo Kemei sem fio",
+    "why": "Corte e acabamento em casa, nível barbearia.",
+    "preco": "R$ 288,99",
+    "vendas": "+1 mil vendidos",
+    "badge": "",
+    "cat": "Beleza",
+    "img": "kemei.jpg",
+    "link": "https://s.shopee.com.br/5VWPuxvMuQ"
+  },
+  {
+    "nome": "Kit 2 calças jeans masculinas com lycra",
+    "why": "Slim, estica e não aperta. Sai por menos de R$ 60 cada.",
+    "preco": "R$ 115,50",
+    "vendas": "+240 vendidos",
+    "badge": "",
+    "cat": "Moda",
+    "img": "jeans.jpg",
+    "nota": "4,8",
+    "link": "https://s.shopee.com.br/7VHUIej1Fp"
+  }
+]/*FIM*/;
+
+  // ===== Monta uma tela por produto =====
+  const feed = document.getElementById("feed");
+  const end = document.getElementById("end");
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const total = PRODUTOS.length;
+
+  PRODUTOS.forEach((p, i) => {
+    const s = document.createElement("section");
+    s.className = "slide";
+    s.id = "p" + (i + 1);
+    s.dataset.label = p.nome;
+    s.dataset.n = i + 1;
+    s.innerHTML = `
+      <div class="bg" style="background-image:url('${IMG(p.img)}')"></div>
+      <div class="shade"></div>
+      <div class="prod">
+        <div class="photo anim">
+          <img loading="${i < 2 ? "eager" : "lazy"}" src="${IMG(p.img)}" alt="${esc(p.nome)}">
+          ${p.badge ? `<span class="badge">${esc(p.badge)}</span>` : ""}
+        </div>
+        <div class="info">
+          <span class="tag anim d1">${String(i + 1).padStart(2, "0")} · ${esc(p.cat)}</span>
+          <h2 class="anim d1">${esc(p.nome)}</h2>
+          <p class="why anim d2">${esc(p.why)}</p>
+          <div class="row anim d3"><span class="price">${esc(p.preco)}</span><span class="sold">${p.nota ? `⭐ ${esc(p.nota)} · ` : ""}${esc(p.vendas)}</span></div>
+          <a class="btn anim d4" href="${p.link}" target="_blank" rel="noopener sponsored" data-nome="${esc(p.nome)}">Ver na Shopee →</a>
+          <div class="safe anim d4">🔒 Compra segura pela Shopee · Garantia Shopee</div>
+        </div>
+      </div>`;
+    feed.insertBefore(s, end);
+  });
+
+  // ===== Navegação: pontinhos, contador e animação de entrada =====
+  const slides = [...feed.querySelectorAll(".slide")];
+  const dots = document.getElementById("dots");
+  const count = document.getElementById("count");
+  slides.forEach((s, i) => {
+    const b = document.createElement("button");
+    b.setAttribute("aria-label", s.dataset.label);
+    b.onclick = () => s.scrollIntoView({ behavior: "smooth" });
+    dots.appendChild(b);
+  });
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const s = e.target;
+      s.classList.add("in");
+      const idx = slides.indexOf(s);
+      [...dots.children].forEach((d, j) => d.setAttribute("aria-current", j === idx));
+      count.textContent = s.dataset.n ? `${s.dataset.n} / ${total}` : "";
+    });
+  }, { root: feed, threshold: 0.55 });
+  slides.forEach(s => io.observe(s));
+
+  // Setas do teclado no computador
+  document.addEventListener("keydown", e => {
+    if (!["ArrowDown", "ArrowUp", "PageDown", "PageUp"].includes(e.key)) return;
+    e.preventDefault();
+    const cur = Math.round(feed.scrollTop / feed.clientHeight);
+    const next = Math.max(0, Math.min(slides.length - 1, cur + (e.key === "ArrowDown" || e.key === "PageDown" ? 1 : -1)));
+    slides[next].scrollIntoView({ behavior: "smooth" });
+  });
+  // Categorias da capa: pula pro primeiro produto de cada uma
+  const CATS = [["Cozinha","panelas.jpg"],["Casa","cama.jpg"],["Beleza","kit-acne.jpg"],["Moda","jeans.jpg"]];
+  const catsBox = document.getElementById("cats");
+  CATS.forEach(([c, img]) => {
+    const i = PRODUTOS.findIndex(p => p.cat === c);
+    if (i < 0) return;
+    const b = document.createElement("button");
+    b.innerHTML = `<img src="${IMG(img)}" alt="" loading="eager"><span>${c}</span>`;
+    b.onclick = () => document.getElementById("p" + (i + 1)).scrollIntoView({ behavior: "smooth" });
+    catsBox.appendChild(b);
+  });
+  document.getElementById("start").onclick = () => slides[1].scrollIntoView({ behavior: "smooth" });
+  document.getElementById("toEnd").onclick = e => { e.preventDefault(); end.scrollIntoView({ behavior: "smooth" }); };
+  document.getElementById("again").onclick = () => slides[1].scrollIntoView({ behavior: "smooth" });
+
+  // ===== Cookies + Pixel da Meta (só carrega com consentimento) =====
+  const KEY = "vu_consent";
+  const cookie = document.getElementById("cookie");
+  function getConsent() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+  function setConsent(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
+
+  function loadPixel() {
+    if (!META_PIXEL_ID || window.fbq) return;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', META_PIXEL_ID);
+    fbq('track', 'PageView');
+  }
+
+  feed.addEventListener("click", e => {
+    const btn = e.target.closest("a.btn");
+    if (btn && window.fbq) fbq("track", "ViewContent", { content_name: btn.dataset.nome });
+  });
+
+  if (META_PIXEL_ID) {
+    const c = getConsent();
+    if (c === "sim") loadPixel();
+    else if (c !== "nao") cookie.style.display = "block";
+  }
+  document.getElementById("cookieOk").onclick = () => { setConsent("sim"); cookie.style.display = "none"; loadPixel(); };
+  document.getElementById("cookieNo").onclick = () => { setConsent("nao"); cookie.style.display = "none"; };
+</script>
+</body>
+</html>
