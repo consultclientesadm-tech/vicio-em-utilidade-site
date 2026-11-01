@@ -65,13 +65,13 @@ def build_base(cfg, out):
                 fh = int(W * src_h / src_w) // 2 * 2
                 fg = f"scale={W}:{fh}:flags=lanczos"
                 for bi, (y0, y1) in enumerate(bands(band)):
-                    fg += (f",split[fa{bi}][fb{bi}];[fb{bi}]crop={W}:{max(2, int(fh*(y1-y0)))}:0:{int(fh*y0)},boxblur=20:2[fbl{bi}];"
+                    fg += (f",split[fa{bi}][fb{bi}];[fb{bi}]crop={W}:{max(2, int(fh*(y1-y0)))}:0:{int(fh*y0)},boxblur={min(20,max(2,int(fh*(y1-y0)))//2-1)}:2:{max(0,min(10,max(2,int(fh*(y1-y0)))//4-1))}:2[fbl{bi}];"
                            f"[fa{bi}][fbl{bi}]overlay=0:{int(fh*y0)}")
                 vf = f"{head},split[a][b];[b]{bg}[bg];[a]{fg}[fg];[bg][fg]overlay=0:{VID_CY - fh // 2}"
             else:
                 vf = f"{head},scale={W}:{H}:force_original_aspect_ratio=increase:flags=lanczos,crop={W}:{H}"
                 for bi, (y0, y1) in enumerate(bands(band)):
-                    vf += (f",split[a{bi}][b{bi}];[b{bi}]crop={W}:{int(H*(y1-y0))}:0:{int(H*y0)},boxblur=44:3,eq=saturation=0.35[bl{bi}];"
+                    vf += (f",split[a{bi}][b{bi}];[b{bi}]crop={W}:{int(H*(y1-y0))}:0:{int(H*y0)},boxblur={min(44,int(H*(y1-y0))//2-1)}:3:{min(22,int(H*(y1-y0))//4-1)}:3,eq=saturation=0.35[bl{bi}];"
                            f"[a{bi}][bl{bi}]overlay=0:{int(H*y0)}")
             inp = ["-i", cfg["source"]]
         vf += ",eq=saturation=1.08:contrast=1.04,unsharp=5:5:0.5"
