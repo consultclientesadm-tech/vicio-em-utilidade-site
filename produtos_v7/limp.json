@@ -1,1 +1,53 @@
-{"source": "limp.mp4", "keyword": "LIMPEZA", "vitrine_n": 28, "rating": "4,8", "blur_band": null, "shots": [{"src": [0, 2], "title": "LIMPA SEM ESFORÇO", "big": true}, {"src": [2, 4.5], "title": "REJUNTE E CANTINHOS"}, {"src": [6, 9], "title": "9 CABEÇAS DIFERENTES"}, {"src": [15, 18], "title": "CABO EXTENSOR", "blur": [0.86, 0.95]}, {"src": [10.5, 13.5], "title": "+60 MIL VENDIDAS"}], "script_ig": "Escova elétrica que limpa o rejunte sem você esfregar! Liga e ela gira sozinha: pia, box e até vidro. Comenta LIMPEZA que eu te mando o link! Nota quatro vírgula oito na Shopee. Eu garimpo, você aproveita. Se ainda limpa no braço, precisa dessa", "script_tt": "Escova elétrica que limpa o rejunte sem você esfregar! Liga e ela gira sozinha: pia, box e até vidro. Link na bio, produto vinte e oito da vitrine! Nota quatro vírgula oito na Shopee. Eu garimpo, você aproveita. Se ainda limpa no braço, precisa dessa", "narr_ig": "limp_ig.mp3", "narr_tt": "limp_tt.mp3"}
+{
+ "source": "limp.mp4",
+ "keyword": "LIMPEZA",
+ "vitrine_n": 28,
+ "rating": "4,8",
+ "blur_band": null,
+ "shots": [
+  {
+   "src": [
+    0,
+    2
+   ],
+   "title": "LIMPA SEM ESFORÇO",
+   "big": true
+  },
+  {
+   "src": [
+    2,
+    4.5
+   ],
+   "title": "REJUNTE E CANTINHOS"
+  },
+  {
+   "src": [
+    6,
+    9
+   ],
+   "title": "9 CABEÇAS DIFERENTES"
+  },
+  {
+   "src": [
+    15,
+    18
+   ],
+   "title": "CABO EXTENSOR",
+   "blur": [
+    0.8,
+    0.92
+   ]
+  },
+  {
+   "src": [
+    10.5,
+    13.5
+   ],
+   "title": "+60 MIL VENDIDAS"
+  }
+ ],
+ "script_ig": "Escova elétrica que limpa o rejunte sem você esfregar! Liga e ela gira sozinha: pia, box e até vidro. Comenta LIMPEZA que eu te mando o link! Nota quatro vírgula oito na Shopee. Eu garimpo, você aproveita. Se ainda limpa no braço, precisa dessa",
+ "script_tt": "Escova elétrica que limpa o rejunte sem você esfregar! Liga e ela gira sozinha: pia, box e até vidro. Link na bio, produto vinte e oito da vitrine! Nota quatro vírgula oito na Shopee. Eu garimpo, você aproveita. Se ainda limpa no braço, precisa dessa",
+ "narr_ig": "limp_ig.mp3",
+ "narr_tt": "limp_tt.mp3"
+}
