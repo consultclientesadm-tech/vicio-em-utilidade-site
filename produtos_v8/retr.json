@@ -1,0 +1,78 @@
+{
+ "atempo": 1.18,
+ "punch": 0.08,
+ "shake": 14,
+ "price_t0": 1.4,
+ "price_x": 540,
+ "price_y": 540,
+ "source": "retr.mp4",
+ "keyword": "RETROVISOR",
+ "vitrine_n": 33,
+ "rating": "4,9",
+ "price": "MENOS DE R$ 60",
+ "blur_band": [
+  [
+   0.17,
+   0.28
+  ],
+  [
+   0.84,
+   0.95
+  ]
+ ],
+ "shots": [
+  {
+   "src": [
+    0.0,
+    1.5
+   ],
+   "title": "VEJA O BEBÊ SEM VIRAR",
+   "big": true
+  },
+  {
+   "src": [
+    2.0,
+    3.4
+   ],
+   "title": "BANCO DE TRÁS"
+  },
+  {
+   "src": [
+    16.9,
+    18.3
+   ],
+   "title": "PRENDE NO ENCOSTO"
+  },
+  {
+   "src": [
+    21.6,
+    23.0
+   ],
+   "title": "MESMO DE COSTAS"
+  },
+  {
+   "src": [
+    28.7,
+    30.0
+   ],
+   "title": "GIRA 360°"
+  },
+  {
+   "src": [
+    32.0,
+    33.4
+   ]
+  },
+  {
+   "src": [
+    38.5,
+    40.0
+   ],
+   "title": "DIRIJA TRANQUILA"
+  }
+ ],
+ "script_ig": "Nunca mais vira pra trás dirigindo! Esse espelho mostra seu bebê no banco de trás. Prende no encosto e gira trezentos e sessenta graus, por menos de sessenta reais. Comenta RETROVISOR que eu te mando o link! Sério,",
+ "script_tt": "Nunca mais vira pra trás dirigindo! Esse espelho mostra seu bebê no banco de trás. Prende no encosto e gira trezentos e sessenta graus, por menos de sessenta reais. Link na bio, produto trinta e três da vitrine! Sério,",
+ "narr_ig": "retr_ig.mp3",
+ "narr_tt": "retr_tt.mp3"
+}
