@@ -1,0 +1,28 @@
+{
+ "source": "limp.mp4",
+ "keyword": "LIMPEZA",
+ "vitrine_n": 28,
+ "rating": "4,8",
+ "atempo": 1.18,
+ "punch": 0.08,
+ "shake": 14,
+ "price": "MENOS DE R$ 70",
+ "price_t0": 0.0,
+ "price_x": 540,
+ "price_y": 540,
+ "blur_band": null,
+ "shots": [
+  {"src": [3.0, 4.4], "title": "PARA DE ESFREGAR REJUNTE", "big": true},
+  {"src": [4.5, 5.8], "title": "ELA GIRA SOZINHA"},
+  {"src": [5.8, 7.0], "title": "BOX E CANTINHOS"},
+  {"src": [0.3, 1.6], "title": "PIA E RALO"},
+  {"src": [7.5, 8.7], "title": "9 ESCOVAS"},
+  {"src": [11.5, 12.7]},
+  {"src": [15.0, 16.2], "title": "CABO LONGO", "blur": [0.66, 0.76]},
+  {"src": [16.2, 17.8], "title": "ATÉ VIDRO", "blur": [0.66, 0.76]}
+ ],
+ "script_ig": "Para de esfregar rejunte! Encosta, e ela gira sozinha: box, pia, rejunte e até vidro. Nove escovas e cabo longo, por menos de setenta reais. Comenta LIMPEZA que eu te mando o link! Sério, então",
+ "script_tt": "Para de esfregar rejunte! Encosta, e ela gira sozinha: box, pia, rejunte e até vidro. Nove escovas e cabo longo, por menos de setenta reais. Link na bio, produto vinte e oito da vitrine! Sério, então",
+ "narr_ig": "limp_ig.mp3",
+ "narr_tt": "limp_tt.mp3"
+}
