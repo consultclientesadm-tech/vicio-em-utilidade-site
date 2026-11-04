@@ -1,0 +1,75 @@
+{
+ "atempo": 1.18,
+ "punch": 0.08,
+ "shake": 14,
+ "price_t0": 1.4,
+ "price_x": 540,
+ "price_y": 540,
+ "source": "alho.mp4",
+ "keyword": "ALHO",
+ "vitrine_n": 29,
+ "rating": "4,7",
+ "price": "MENOS DE R$ 25",
+ "blur_band": null,
+ "crop": [
+  0,
+  0.25,
+  1,
+  0.73
+ ],
+ "shots": [
+  {
+   "src": [
+    5.0,
+    6.4
+   ],
+   "title": "PARA DE PICAR NA FACA",
+   "big": true
+  },
+  {
+   "src": [
+    3.0,
+    4.4
+   ],
+   "title": "APERTA E PRONTO"
+  },
+  {
+   "src": [
+    0.5,
+    1.9
+   ],
+   "title": "SEM FIO"
+  },
+  {
+   "src": [
+    10.0,
+    11.4
+   ],
+   "title": "CARNE E CEBOLA"
+  },
+  {
+   "src": [
+    12.0,
+    13.4
+   ],
+   "title": "+30 MIL VENDIDOS"
+  },
+  {
+   "src": [
+    7.5,
+    8.9
+   ]
+  },
+  {
+   "src": [
+    14.2,
+    15.6
+   ],
+   "title": "SEM CHEIRO NA MÃO"
+  }
+ ],
+ "script_ig": "Para de picar alho na faca! Aperta e em três segundos tá picadinho, sem cheiro na mão. Alho, cebola, pimenta e até carne, por menos de vinte e cinco reais. Comenta ALHO que eu te mando o link! Sério,",
+ "script_tt": "Para de picar alho na faca! Aperta e em três segundos tá picadinho, sem cheiro na mão. Alho, cebola, pimenta e até carne, por menos de vinte e cinco reais. Link na bio, produto vinte e nove da vitrine! Sério,",
+ "narr_ig": "alho_ig.mp3",
+ "narr_tt": "alho_tt.mp3"
+}

@@ -1,0 +1,79 @@
+{
+ "atempo": 1.18,
+ "punch": 0.08,
+ "shake": 14,
+ "price_t0": 1.4,
+ "price_x": 540,
+ "price_y": 540,
+ "source": "almo.mp4",
+ "keyword": "ALMOFADA",
+ "vitrine_n": 32,
+ "rating": "4,9",
+ "price": "MENOS DE R$ 25",
+ "blur_band": [
+  [
+   0.17,
+   0.27
+  ],
+  [
+   0.82,
+   0.92
+  ]
+ ],
+ "crop": null,
+ "shots": [
+  {
+   "src": [
+    0.0,
+    1.4
+   ],
+   "title": "CABEÇA CAINDO NO CARRO?",
+   "big": true
+  },
+  {
+   "src": [
+    6.3,
+    7.7
+   ],
+   "title": "AGORA FICA FIRME"
+  },
+  {
+   "src": [
+    9.0,
+    10.4
+   ],
+   "title": "DORME TRANQUILO"
+  },
+  {
+   "src": [
+    17.0,
+    18.4
+   ],
+   "title": "FÁCIL DE COLOCAR"
+  },
+  {
+   "src": [
+    13.0,
+    14.4
+   ]
+  },
+  {
+   "src": [
+    25.0,
+    26.4
+   ],
+   "title": "100% ALGODÃO"
+  },
+  {
+   "src": [
+    30.6,
+    32.0
+   ],
+   "title": "LAVÁVEL"
+  }
+ ],
+ "script_ig": "A cabeça do seu filho cai assim na cadeirinha? Essa almofada segura firme e ele dorme tranquilo. Cem por cento algodão, fácil de colocar, por menos de vinte e cinco reais. Comenta ALMOFADA que eu te mando o link! Sério,",
+ "script_tt": "A cabeça do seu filho cai assim na cadeirinha? Essa almofada segura firme e ele dorme tranquilo. Cem por cento algodão, fácil de colocar, por menos de vinte e cinco reais. Link na bio, produto trinta e dois da vitrine! Sério,",
+ "narr_ig": "almo_ig.mp3",
+ "narr_tt": "almo_tt.mp3"
+}

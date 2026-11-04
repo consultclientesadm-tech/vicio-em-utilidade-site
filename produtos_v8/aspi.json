@@ -1,0 +1,71 @@
+{
+ "atempo": 1.18,
+ "punch": 0.08,
+ "shake": 14,
+ "price_t0": 1.4,
+ "price_x": 540,
+ "price_y": 540,
+ "source": "aspi.mp4",
+ "keyword": "ASPIRADOR",
+ "vitrine_n": 30,
+ "rating": "4,6",
+ "price": "MENOS DE R$ 25",
+ "blur_band": null,
+ "crop": null,
+ "shots": [
+  {
+   "src": [
+    2.2,
+    3.6
+   ],
+   "title": "CARRO CHEIO DE FARELO?",
+   "big": true
+  },
+  {
+   "src": [
+    5.0,
+    6.4
+   ],
+   "title": "SAÍDA DE AR"
+  },
+  {
+   "src": [
+    7.2,
+    8.6
+   ],
+   "title": "CONSOLE"
+  },
+  {
+   "src": [
+    11.0,
+    12.4
+   ],
+   "title": "CANTINHOS"
+  },
+  {
+   "src": [
+    16.0,
+    17.4
+   ],
+   "title": "TAPETE"
+  },
+  {
+   "src": [
+    17.6,
+    19.0
+   ],
+   "title": "ATÉ O TECLADO"
+  },
+  {
+   "src": [
+    20.2,
+    21.6
+   ],
+   "title": "+100 MIL VENDIDOS"
+  }
+ ],
+ "script_ig": "Seu carro tá cheio de farelo? Esse aspirador sem fio suga tudo em segundos: console, saída de ar, tapete e até teclado. Por menos de vinte e cinco reais! Comenta ASPIRADOR que eu te mando o link! Sério,",
+ "script_tt": "Seu carro tá cheio de farelo? Esse aspirador sem fio suga tudo em segundos: console, saída de ar, tapete e até teclado. Por menos de vinte e cinco reais! Link na bio, produto trinta da vitrine! Sério,",
+ "narr_ig": "aspi_ig.mp3",
+ "narr_tt": "aspi_tt.mp3"
+}
