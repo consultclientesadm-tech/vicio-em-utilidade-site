@@ -1,0 +1,72 @@
+{
+ "atempo": 1.18,
+ "punch": 0.08,
+ "shake": 14,
+ "price_t0": 1.4,
+ "price_x": 540,
+ "price_y": 540,
+ "source": "omel.mp4",
+ "keyword": "OMELETE",
+ "vitrine_n": 26,
+ "rating": "4,9",
+ "price": "MENOS DE R$ 120",
+ "blur_band": [
+  0.8,
+  1.0
+ ],
+ "shots": [
+  {
+   "src": [
+    28.0,
+    29.4
+   ],
+   "title": "2 OMELETES DE UMA VEZ",
+   "big": true
+  },
+  {
+   "src": [
+    18.0,
+    19.4
+   ],
+   "title": "COLOCA OS OVOS"
+  },
+  {
+   "src": [
+    12.0,
+    13.4
+   ],
+   "title": "FECHA E PRONTO"
+  },
+  {
+   "src": [
+    30.0,
+    31.4
+   ],
+   "title": "DOURADINHA"
+  },
+  {
+   "src": [
+    32.0,
+    33.4
+   ]
+  },
+  {
+   "src": [
+    41.5,
+    42.9
+   ],
+   "title": "PANQUECA"
+  },
+  {
+   "src": [
+    45.5,
+    46.9
+   ],
+   "title": "PÃO RECHEADO"
+  }
+ ],
+ "script_ig": "Para de sujar o fogão pra fazer omelete! Coloca os ovos, fecha, e saem duas omeletes douradinhas de uma vez. Faz panqueca e pão recheado também, por menos de cento e vinte reais. Comenta OMELETE que eu te mando o link! Sério,",
+ "script_tt": "Para de sujar o fogão pra fazer omelete! Coloca os ovos, fecha, e saem duas omeletes douradinhas de uma vez. Faz panqueca e pão recheado também, por menos de cento e vinte reais. Link na bio, produto vinte e seis da vitrine! Sério,",
+ "narr_ig": "omel_ig.mp3",
+ "narr_tt": "omel_tt.mp3"
+}

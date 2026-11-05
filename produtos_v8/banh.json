@@ -1,0 +1,71 @@
+{
+ "atempo": 1.18,
+ "punch": 0.08,
+ "shake": 14,
+ "price_t0": 1.4,
+ "price_x": 540,
+ "price_y": 540,
+ "source": "banh.mp4",
+ "keyword": "BANHO",
+ "vitrine_n": 12,
+ "rating": "5,0",
+ "price": "NOTA 5,0 ⭐",
+ "blur_band": [
+  0.7,
+  0.9
+ ],
+ "shots": [
+  {
+   "src": [
+    57.0,
+    58.4
+   ],
+   "title": "BANHEIRA QUE DOBRA",
+   "big": true
+  },
+  {
+   "src": [
+    53.0,
+    54.4
+   ],
+   "title": "SÓ 18 cm GUARDADA"
+  },
+  {
+   "src": [
+    17.5,
+    18.9
+   ],
+   "title": "ASSENTO COM TRAVA"
+  },
+  {
+   "src": [
+    20.5,
+    21.9
+   ]
+  },
+  {
+   "src": [
+    44.0,
+    45.4
+   ],
+   "title": "BEBÊ SEGURO"
+  },
+  {
+   "src": [
+    55.0,
+    56.4
+   ],
+   "title": "+2 MIL VENDIDAS"
+  },
+  {
+   "src": [
+    58.5,
+    59.9
+   ]
+  }
+ ],
+ "script_ig": "Banheira de bebê ocupando o banheiro todo? Essa dobra e fica com só dezoito centímetros. Assento com trava, do recém-nascido até três anos, e nota cinco na Shopee! Comenta BANHO que eu te mando o link! Sério,",
+ "script_tt": "Banheira de bebê ocupando o banheiro todo? Essa dobra e fica com só dezoito centímetros. Assento com trava, do recém-nascido até três anos, e nota cinco na Shopee! Link na bio, produto doze da vitrine! Sério,",
+ "narr_ig": "banh_ig.mp3",
+ "narr_tt": "banh_tt.mp3"
+}
