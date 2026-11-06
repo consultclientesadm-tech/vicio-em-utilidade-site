@@ -1,0 +1,72 @@
+{
+ "atempo": 1.18,
+ "punch": 0.08,
+ "shake": 14,
+ "price_t0": 1.4,
+ "price_x": 540,
+ "price_y": 540,
+ "source": "para.mp4",
+ "keyword": "FURADEIRA",
+ "vitrine_n": 16,
+ "rating": "4,7",
+ "price": "MENOS DE R$ 200",
+ "blur_band": [
+  0.54,
+  0.73
+ ],
+ "shots": [
+  {
+   "src": [
+    5.0,
+    6.4
+   ],
+   "title": "OLHA O QUE VEM NA MALETA",
+   "big": true
+  },
+  {
+   "src": [
+    11.0,
+    12.4
+   ],
+   "title": "FURA E PARAFUSA"
+  },
+  {
+   "src": [
+    15.5,
+    16.9
+   ],
+   "title": "LUZ DE LED"
+  },
+  {
+   "src": [
+    19.0,
+    20.4
+   ],
+   "title": "2 BATERIAS"
+  },
+  {
+   "src": [
+    21.0,
+    22.4
+   ],
+   "title": "CARREGADOR BIVOLT"
+  },
+  {
+   "src": [
+    26.0,
+    27.4
+   ],
+   "title": "30 ACESSÓRIOS"
+  },
+  {
+   "src": [
+    8.0,
+    9.4
+   ]
+  }
+ ],
+ "script_ig": "Olha tudo que vem nessa maleta! Parafusadeira 25V que fura e parafusa, luz de LED, duas baterias, carregador bivolt e trinta acessórios, por menos de duzentos reais. Comenta FURADEIRA que eu te mando o link! Sério,",
+ "script_tt": "Olha tudo que vem nessa maleta! Parafusadeira 25V que fura e parafusa, luz de LED, duas baterias, carregador bivolt e trinta acessórios, por menos de duzentos reais. Link na bio, produto dezesseis da vitrine! Sério,",
+ "narr_ig": "para_ig.mp3",
+ "narr_tt": "para_tt.mp3"
+}

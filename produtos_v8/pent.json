@@ -1,0 +1,68 @@
+{
+ "atempo": 1.18,
+ "punch": 0.08,
+ "shake": 14,
+ "price_t0": 1.4,
+ "price_x": 540,
+ "price_y": 540,
+ "source": "pent.mp4",
+ "keyword": "PENTEADEIRA",
+ "vitrine_n": 18,
+ "rating": "4,7",
+ "price": "MENOS DE R$ 180",
+ "blur_band": null,
+ "shots": [
+  {
+   "src": [
+    9.5,
+    10.9
+   ],
+   "title": "MAQUIAGEM ESPALHADA?",
+   "big": true
+  },
+  {
+   "src": [
+    1.0,
+    2.4
+   ],
+   "title": "ABRE O TAMPO"
+  },
+  {
+   "src": [
+    2.6,
+    4.0
+   ],
+   "title": "ESPELHO INTERNO"
+  },
+  {
+   "src": [
+    13.5,
+    14.9
+   ],
+   "title": "PORTA E PRATELEIRAS"
+  },
+  {
+   "src": [
+    6.0,
+    7.4
+   ]
+  },
+  {
+   "src": [
+    16.5,
+    17.9
+   ],
+   "title": "+8 MIL AVALIAÇÕES"
+  },
+  {
+   "src": [
+    19.5,
+    20.9
+   ]
+  }
+ ],
+ "script_ig": "Maquiagem espalhada pelo quarto todo? Essa penteadeira esconde tudo: abre o tampo e tem espelho, porta e prateleiras. Fechou, a bagunça sumiu, por menos de cento e oitenta reais. Comenta PENTEADEIRA que eu te mando o link! Sério,",
+ "script_tt": "Maquiagem espalhada pelo quarto todo? Essa penteadeira esconde tudo: abre o tampo e tem espelho, porta e prateleiras. Fechou, a bagunça sumiu, por menos de cento e oitenta reais. Link na bio, produto dezoito da vitrine! Sério,",
+ "narr_ig": "pent_ig.mp3",
+ "narr_tt": "pent_tt.mp3"
+}

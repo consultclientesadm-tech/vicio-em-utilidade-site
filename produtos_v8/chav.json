@@ -1,0 +1,69 @@
+{
+ "atempo": 1.18,
+ "punch": 0.08,
+ "shake": 14,
+ "price_t0": 1.4,
+ "price_x": 540,
+ "price_y": 540,
+ "source": "chav.mp4",
+ "keyword": "CHAVE",
+ "vitrine_n": 17,
+ "rating": "4,8",
+ "price": "MENOS DE R$ 30",
+ "blur_band": null,
+ "shots": [
+  {
+   "src": [
+    8.5,
+    9.9
+   ],
+   "title": "CARRO DEU PROBLEMA?",
+   "big": true
+  },
+  {
+   "src": [
+    0.0,
+    1.4
+   ],
+   "title": "46 PEÇAS"
+  },
+  {
+   "src": [
+    3.0,
+    4.4
+   ],
+   "title": "CATRACA REVERSÍVEL"
+  },
+  {
+   "src": [
+    11.5,
+    12.9
+   ],
+   "title": "COM EXTENSOR"
+  },
+  {
+   "src": [
+    16.0,
+    17.4
+   ]
+  },
+  {
+   "src": [
+    19.5,
+    20.9
+   ],
+   "title": "CABE NO CARRO"
+  },
+  {
+   "src": [
+    5.5,
+    6.9
+   ],
+   "title": "+400 MIL VENDIDOS"
+  }
+ ],
+ "script_ig": "Carro deu problema e você sem ferramenta? Esse jogo de chave catraca tem quarenta e seis peças, catraca reversível e extensor, e cabe no banco do carro. Por menos de trinta reais! Comenta CHAVE que eu te mando o link! Sério,",
+ "script_tt": "Carro deu problema e você sem ferramenta? Esse jogo de chave catraca tem quarenta e seis peças, catraca reversível e extensor, e cabe no banco do carro. Por menos de trinta reais! Link na bio, produto dezessete da vitrine! Sério,",
+ "narr_ig": "chav_ig.mp3",
+ "narr_tt": "chav_tt.mp3"
+}
