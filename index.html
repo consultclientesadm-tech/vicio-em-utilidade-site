@@ -298,7 +298,7 @@
   const META_PIXEL_ID = "585948530541421";
 
   // Imagens: arquivos da pasta img/ (fotos oficiais dos anúncios, 900 px).
-  const IMG = f => "img/" + f;
+  const IMG = f => /^https?:/.test(f) ? f : "img/" + f;
 
   // Produtos da vitrine. "n" é o número fixo (o vídeo do TikTok fala "produto nº n").
   // "post" é quando o vídeo do produto vai ao ar: o site sempre abre pelo vídeo mais recente que já saiu.
@@ -727,6 +727,45 @@
       "nota": "4,9",
       "link": "https://s.shopee.com.br/8pn1CuedDa",
       "post": "2026-11-04T15:00:00-03:00"
+    },
+    {
+      "n": 34,
+      "nome": "Organizador de banco com mesinha",
+      "why": "Bolsos, porta-copos e mesinha: o carro para de virar bagunça.",
+      "preco": "R$ 79,98",
+      "vendas": "+600 vendidos",
+      "badge": "",
+      "cat": "Carro",
+      "img": "https://down-br.img.susercontent.com/file/br-11134207-820la-mo7olnljusqo9e",
+      "nota": "4,9",
+      "link": "https://s.shopee.com.br/3Vle03wm0s",
+      "post": "2026-11-08T09:00:00-03:00"
+    },
+    {
+      "n": 35,
+      "nome": "Bomba de ar digital portátil",
+      "why": "Calibra sozinha o pneu do carro, da moto e da bike, e vira powerbank.",
+      "preco": "R$ 64,95",
+      "vendas": "+5 mil vendidos",
+      "badge": "",
+      "cat": "Carro",
+      "img": "https://down-br.img.susercontent.com/file/br-11134207-81z1k-mgz1ko75qj2d95",
+      "nota": "4,9",
+      "link": "https://s.shopee.com.br/3LSDnkxPLr",
+      "post": "2026-11-08T15:00:00-03:00"
+    },
+    {
+      "n": 36,
+      "nome": "Chaleira elétrica inox 1,8 L",
+      "why": "Água quente pro café, chá e chimarrão em minutos, e desliga sozinha.",
+      "preco": "R$ 39,88",
+      "vendas": "+3 mil vendidos",
+      "badge": "",
+      "cat": "Cozinha",
+      "img": "https://down-br.img.susercontent.com/file/br-11134207-820m1-mmabfixk90qv68",
+      "nota": "4,8",
+      "link": "https://s.shopee.com.br/4VeBBtsxz6",
+      "post": "2026-11-08T20:00:00-03:00"
     }
   ]/*FIM*/;
 
