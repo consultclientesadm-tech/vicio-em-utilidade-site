@@ -16,7 +16,7 @@ fc.append("".join(f"[v{i}][a{i}]" for i in range(n)) + f"concat=n={n}:v=1:a=1{vo
 if pal:
     font = cfg.get("fonte", "/usr/share/fonts/opentype/inter/Inter-ExtraBold.otf")
     fc.append(f"[vc]drawtext=fontfile={font}:text='{pal['texto']}':fontsize=150:fontcolor=white:borderw=10:bordercolor=black:"
-              f"x=(w-text_w)/2:y=h*{pal.get('y', 0.64)}:enable='between(t,{pal['ini']},{pal['fim']})'[v]")
+              f"x=(w-text_w)/2:y=h*{pal.get('y', 0.68)}:enable='between(t,{pal['ini']},{pal['fim']})'[v]")
 fc.append("[a0]loudnorm=I=-14:TP=-1.5[a]")
 subprocess.run(["ffmpeg", "-loglevel", "error", "-y", *ins, "-filter_complex", ";".join(fc), "-map", "[v]", "-map", "[a]",
                 "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-r", "30", "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
