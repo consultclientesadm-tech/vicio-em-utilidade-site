@@ -1,15 +1,15 @@
 {"cap_y": 150, "music_vol": 0.22,
- "global": [{"text": "#publi", "x": 40, "y": 1780, "size": 30}],
+ "global": [{"text": "#publi", "x": 930, "y": 60, "size": 30}],
  "segments": [
   {"src": "a.mp4", "start": 0.0, "end": 7.4,
    "words": [["Gente,",0.0,0.46],["olha",1.06,1.32],["essas",1.32,2.04],["marquinhas...",2.04,3.08],["foi",3.58,4.0],["isso",4.0,4.48],["aqui",4.48,4.96],["que",4.96,5.38],["salvou",5.38,6.18],["a",6.18,6.46],["minha",6.46,6.6],["pele!",6.6,7.14]],
-   "stickers": [{"text": "KIT ANTI-ACNE EM 3 PASSOS", "t0": 0.0, "t1": 3.4, "y": 1600, "size": 58, "bg": "pink"},
-                {"text": "MENOS DE R$ 150", "t0": 3.5, "y": 1600, "size": 66}]},
+   "stickers": [{"text": "KIT ANTI-ACNE EM 3 PASSOS", "t0": 0.0, "t1": 3.4, "y": 1690, "size": 58, "bg": "pink"},
+                {"text": "MENOS DE R$ 150", "t0": 3.5, "y": 1690, "size": 66}]},
   {"src": "gel.mp4", "start": 0.0, "end": 7.3,
    "words": [["Primeiro",0.0,0.34],["esse",0.34,0.56],["gel",0.56,0.98],["com",0.98,1.26],["o",1.26,1.36],["ácido",1.36,1.64],["salicílico,",1.64,2.6],["limpa",3.82,4.4],["tudo",4.82,5.14],["e",5.14,5.4],["não",6.04,6.28],["resseca.",6.28,7.1]],
-   "stickers": [{"text": "1. GEL ÁCIDO SALICÍLICO", "t0": 0.0, "y": 1600, "size": 56, "bg": "ink"}]},
+   "stickers": [{"text": "1. GEL ÁCIDO SALICÍLICO", "t0": 0.0, "y": 1690, "size": 56, "bg": "ink"}]},
   {"src": "cta.mp4", "start": 0.0, "end": 6.3,
    "words": [["Mais",0.0,0.9],["de",0.9,1.2],["30",1.2,1.74],["mil",1.74,2.14],["vendidos!",2.14,2.98],["Comenta",3.7,4.08],["PELE",4.08,4.6],["que",4.6,4.82],["eu",4.82,4.94],["te",4.94,5.06],["mando",5.06,5.48],["o",5.48,5.58],["link.",5.58,5.92]],
-   "stickers": [{"text": "+30 MIL VENDIDOS  NOTA 4,9", "t0": 0.0, "t1": 3.4, "y": 1600, "size": 54, "bg": "ink"},
-                {"text": "COMENTA \"PELE\"", "t0": 3.4, "y": 1580, "size": 80, "bg": "yel"}]}
+   "stickers": [{"text": "+30 MIL VENDIDOS  NOTA 4,9", "t0": 0.0, "t1": 3.4, "y": 1690, "size": 54, "bg": "ink"},
+                {"text": "COMENTA \"PELE\"", "t0": 3.4, "y": 1670, "size": 80, "bg": "yel"}]}
  ]}

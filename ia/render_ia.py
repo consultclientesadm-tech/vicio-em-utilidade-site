@@ -75,11 +75,15 @@ def main(cfg_path, out):
         words = s.get("words", [])
         # grupos de até 3 palavras
         groups = [words[i:i + 3] for i in range(0, len(words), 3)]
-        for g in groups:
+        for gi, g in enumerate(groups):
             txt = [w[0] for w in g]
             for k, w in enumerate(g):
                 a = t0 + w[1] - s["start"]
-                nxt = g[k + 1][1] if k + 1 < len(g) else min(w[2] + 0.35, s["end"])
+                if k + 1 < len(g):
+                    nxt = g[k + 1][1]
+                else:
+                    nxt = min(w[2] + 0.35, s["end"])
+                    if gi + 1 < len(groups): nxt = min(nxt, groups[gi + 1][0][1])
                 b = t0 + nxt - s["start"]
                 if b <= a: continue
                 p = f"ov/{n}.png"; caption(txt, k).save(p); n += 1
