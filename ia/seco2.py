@@ -8,7 +8,8 @@ def falas(src, a, b):
                         "asetnsamples=1200,astats=metadata=1:reset=1,ametadata=print:key=lavfi.astats.Overall.RMS_level:file=-",
                         "-f", "null", "-"], capture_output=True, text=True).stdout
     lv = [float(x) if x not in ("-inf", "inf") else -99 for x in re.findall(r"RMS_level=(\S+)", r)]
-    TH = cfg.get("ruido", -37); st = 0.025
+    TH = cfg.get("ruido", -37)
+    sr = int(subprocess.run(["ffprobe","-v","error","-select_streams","a","-show_entries","stream=sample_rate","-of","csv=p=0",src],capture_output=True,text=True).stdout.split()[0]); st = 1200 / sr
     voz = [v > TH for v in lv]
     cuts, i, n = [], 0, len(voz)
     while i < n:
